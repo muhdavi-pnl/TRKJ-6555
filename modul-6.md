@@ -1,4 +1,4 @@
-# Modul Praktikum 3: Layout Bersarang (Nested Layout) dan Implementasi Logout
+# Modul Praktikum 6: Layout Bersarang (Nested Layout) dan Implementasi Logout
 
 ## 1. Tujuan Pembelajaran
 
