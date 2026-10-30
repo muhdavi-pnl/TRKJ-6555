@@ -21,6 +21,7 @@ Setelah menyelesaikan modul ini, mahasiswa mampu:
 Pada arsitektur App Router Next.js, file `layout.tsx` digunakan untuk membungkus halaman (`page.tsx`) di dalam direktori yang sama beserta seluruh sub-direktorinya.
 
 **Langkah 1.1: Membuat File Layout**
+
 Buat file baru bernama `layout.tsx` di dalam folder `app/dashboard/` (sejajar dengan `page.tsx`).
 
 Tambahkan kode berikut:
@@ -88,6 +89,7 @@ export default function DashboardLayout({
 **Penjelasan:** Karena file ini berada di `app/dashboard/layout.tsx`, semua halaman di dalam `/dashboard/*` secara otomatis akan memiliki Sidebar dan Navbar ini. Komponen ini adalah *Server Component* secara default.
 
 **Langkah 1.2: Menyesuaikan Konten Halaman Dashboard**
+
 Karena *styling background* (abu-abu) sekarang diurus oleh `layout.tsx`, mari kita bersihkan sedikit file `app/dashboard/page.tsx` dari modul sebelumnya:
 
 Buka `app/dashboard/page.tsx` dan ubah tag `<main>` menjadi `<div>` biasa:
@@ -120,6 +122,7 @@ export default async function DashboardPage() {
 Karena tombol Logout membutuhkan *event handler* (`onClick`) dan modifikasi *cookies* (menghapus cookie) di browser, ia **wajib** dijadikan *Client Component* (`"use client"`). Itulah mengapa pada *Langkah 1.1* kita memisahkan `<LogoutButton/>` dari `layout.tsx`.
 
 **Langkah 2.1: Membuat Komponen LogoutButton**
+
 Buat folder `components` di dalam `app/dashboard/`. Kemudian buat file `LogoutButton.tsx` (`app/dashboard/components/LogoutButton.tsx`).
 
 ```tsx
@@ -184,7 +187,7 @@ export default function LogoutButton() {
 2. Akses `http://localhost:3000/dashboard`.
 3. Anda akan melihat Sidebar di sebelah kiri dan Navbar di atas.
 4. Klik tombol "Logout" di Navbar.
-5. Aplikasi akan mengirim *request* ke Laravel, menghapus *cookies*, dan melempar Anda kembali ke `/login`. Jika Anda mencoba memanggil `/dashboard` lagi di URL browser, *Middleware* dari Modul 2 akan mencegahnya.
+5. Aplikasi akan mengirim *request* ke Laravel, menghapus *cookies*, dan melempar Anda kembali ke `/login`. Jika Anda mencoba memanggil `/dashboard` lagi di URL browser, *Middleware* dari Modul 5 akan mencegahnya.
 
 ---
 
